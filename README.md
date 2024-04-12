@@ -25,7 +25,7 @@ gradle -v
 ## Installazione e utilizzo
 1. Scaricare il file compresso del progetto
 2. Estrarre il progetto
-3. Eseguire il l'Applicazione:
+3. Eseguire l'applicazione:
     - Tramite IDE
     - Tramite terminale:
         1. Naviga nella root del progetto
@@ -36,15 +36,15 @@ gradle -v
 ## Struttura e funzionamento
 Il progetto si compone da quattro classi:
 
-- Nel package `tpsit.javaportscanner.javafxportscanner)`:
+- Nel package `tpsit.javaportscanner.javafxportscanner`:
    - [`App`](src/main/java/tpsit/javaportscanner/javafxportscanner/App.java), l'applicazione JavaFX
    - [`Controller`](src/main/java/tpsit/javaportscanner/javafxportscanner/Controller.java), la classe di controllo e iterazione di JavaFX
    - [`PortScanner`](src/main/java/tpsit/javaportscanner/javafxportscanner/PortScanner.java), la classe principale del programma, che si occupa dello scanning
    - [`Risultato`](src/main/java/tpsit/javaportscanner/javafxportscanner/Risultato.java), una classe che viene utilizzata da JavaFX per l'inserimento dei dati dei risultati nell'interfaccia grafica di JavaFX
      
 L'applicazione permette all'utente di:
-1. Effettuare uno scanning delle porte di un dato host in un range, specificando il protocollo di livello di trasporto utilizzato (TCP o UDP).
-2. Effettuare uno scanning specifico di host per verificare se un dato servizio è disponibile o meno.
+1. **Scanner Porte**: effettuare uno scanning delle porte di un dato host in un range, specificando il protocollo di livello di trasporto utilizzato (TCP o UDP).
+2. **Scanner Servizi**: effettuare uno scanning specifico di host per verificare se un dato servizio è disponibile o meno.
 
 ## Licenza d'uso
 Questo progetto (e tutte le sue versioni) sono rilasciate sotto la [MB General Copyleft License](LICENSE).
