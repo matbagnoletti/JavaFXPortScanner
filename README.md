@@ -44,7 +44,13 @@ Il progetto si compone da quattro classi:
      
 L'applicazione permette all'utente di:
 1. **Scanner Porte**: effettuare uno scanning delle porte di un dato host in un range, specificando il protocollo di livello di trasporto utilizzato (TCP o UDP).
+   <p align="center">
+      <img src="example-a.png" alt="Visualizzazione grafica (1)" style="max-width: 600px; margin-top: 1.5rem">
+   </p> 
 2. **Scanner Servizi**: effettuare uno scanning specifico di host per verificare se un dato servizio è disponibile o meno.
+   <p align="center">
+      <img src="example-b.png" alt="Visualizzazione grafica (2)" style="max-width: 600px; margin-top: 1.5rem">
+   </p> 
 
 ## Licenza d'uso
 Questo progetto (e tutte le sue versioni) sono rilasciate sotto la [MB General Copyleft License](LICENSE).
