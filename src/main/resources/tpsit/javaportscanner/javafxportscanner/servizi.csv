@@ -1,0 +1,42 @@
+TCP;TCP Multiplexor;1
+TCP;compressnet Management Utility;2
+TCP;compressnet Compression Process;3
+UDP;Echo;7
+UDP;Bif;8
+UDP;Discard;9
+TCP;Daytime;13
+TCP;Quote of the Day;17
+UDP;Chargen;19
+TCP;FTP (data);20
+TCP;FTP (control);21
+TCP;SSH - SCP - SFTP;22
+TCP;Telnet;23
+TCP;SMTP;25
+TCP;DNS;53
+UDP;DNS;53
+UDP;DHCP;67
+UDP;TFTP;69
+TCP;Gopher;70
+TCP;finger;79
+TCP;HTTP;80
+TCP;Kerberos;88
+TCP;DICOM;104
+TCP;POP;110
+TCP;NNTP;119
+UDP;NTP;123
+UDP;NetBIOS Name Service;137
+UDP;NetBIOS Datagram Service;138
+TCP;NetBIOS Session Service;137
+TCP;IMAP4;143
+UDP;SNMP (Agent);161
+UDP;SNMP (Manager);162
+TCP;LDAP;389
+TCP;Direct Connect;411
+TCP;HTTPS;443
+TCP;Active Directory;445
+TCP;SMTP (SSL);465
+UDP;RTSP;554
+UDP;IPP - CUPS;631
+TCP;LDAP (SSL);636
+TCP;IMAP4 (SSL);993
+TCP;POP3 (SSL);995

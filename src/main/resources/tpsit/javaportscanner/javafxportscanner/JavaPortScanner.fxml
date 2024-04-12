@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="700.0" scaleShape="false" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tpsit.javaportscanner.javafxportscanner.Controller">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" scaleShape="false">
+         <children>
+            <TabPane layoutY="-2.0" prefHeight="500.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="tabPorte" text="Scanner porte">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField id="host" fx:id="host" layoutX="212.0" layoutY="27.0" maxHeight="30.0" maxWidth="218.0" prefHeight="30.0" prefWidth="202.0" promptText="www.google.com">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField id="minPorta" fx:id="minPorta" layoutX="212.0" layoutY="70.0" maxHeight="30.0" maxWidth="202.0" prefHeight="30.0" prefWidth="202.0" promptText="MIN: 1">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField id="maxPorta" fx:id="maxPorta" layoutX="212.0" layoutY="112.0" maxHeight="30.0" maxWidth="202.0" prefHeight="30.0" prefWidth="202.0" promptText="MAX: 65535">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                               <ChoiceBox fx:id="protocollo" layoutX="212.0" layoutY="154.0" prefHeight="30.0" prefWidth="202.0">
+                                   <items>
+                                       <FXCollections fx:factory="observableArrayList">
+                                           <String fx:value="TCP" />
+                                           <String fx:value="UDP" />
+                                       </FXCollections>
+                                   </items>
+                               </ChoiceBox>
+                              <Button fx:id="cercaBtn" defaultButton="true" layoutX="575.0" layoutY="153.0" maxHeight="30.0" maxWidth="100.0" mnemonicParsing="false" onAction="#ricerca" prefHeight="30.0" prefWidth="100.0" text="Avvia" />
+                              <TableView fx:id="tabellaPorteDescrizione" layoutX="25.0" layoutY="212.0" prefHeight="236.0" prefWidth="650.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                                  <placeholder>
+                                      <Label text="Avvia la scansione per visualizzare i risultati" />
+                                  </placeholder>
+                                <columns>
+                                    <TableColumn fx:id="cPorte" editable="false" prefWidth="120.79998779296875" resizable="false" sortType="DESCENDING" text="Porte">
+                                    <style>
+                                        -fx-alignment: CENTER;
+                                    </style>    
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="porta" />
+                                        </cellValueFactory>
+                                        <style>
+                                            -fx-alignment: CENTER;
+                                        </style>
+                                    </TableColumn>
+
+                                    <TableColumn fx:id="cDescrizione" editable="false" prefWidth="528.3999938964844" resizable="false" sortable="false" text="Descrizione">
+                                    <style>
+                                        -fx-alignment: CENTER;
+                                    </style>
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="servizio" />
+                                        </cellValueFactory>
+                                        <style>
+                                            -fx-alignment: CENTER;
+                                        </style>
+                                    </TableColumn>
+                                </columns>
+                              </TableView>
+                              <Text layoutX="25.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Host (indirizzo IP o dominio)">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="25.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Porta di inizio scansione">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="25.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Porta di fine scansione">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="resetBtn" cancelButton="true" layoutX="458.0" layoutY="154.0" maxHeight="30.0" maxWidth="100.0" mnemonicParsing="false" onAction="#resetInput" prefHeight="30.0" prefWidth="100.0" text="Reset" />
+                              <Text layoutX="25.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Protocollo Livello Trasporto">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="tabServizi" text="Scanner servizi">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="543.0">
+                           <children>
+                              <TextField id="host" fx:id="hostServizi" layoutX="212.0" layoutY="27.0" maxHeight="30.0" maxWidth="218.0" prefHeight="30.0" prefWidth="202.0" promptText="www.google.com">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Text layoutX="25.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Host (indirizzo IP o dominio)">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="25.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Protocollo Livello Trasporto">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <ChoiceBox fx:id="protocolloServizi" layoutX="212.0" layoutY="70.0" onAction="#aggiornaServizi" prefHeight="30.0" prefWidth="202.0">
+                                 <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                       <String fx:value="TCP" />
+                                       <String fx:value="UDP" />
+                                    </FXCollections>
+                                 </items>
+                              </ChoiceBox>
+                              <Text layoutX="25.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Servizio da testare">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <ChoiceBox fx:id="servizio" layoutX="212.0" layoutY="112.0" prefHeight="30.0" prefWidth="202.0" />
+                              <Button fx:id="resetBtnServizio" cancelButton="true" layoutX="458.0" layoutY="112.0" maxHeight="30.0" maxWidth="100.0" mnemonicParsing="false" onAction="#resetInputServizio" prefHeight="30.0" prefWidth="100.0" text="Reset" />
+                              <Button fx:id="cercaBtnServizio" defaultButton="true" layoutX="575.0" layoutY="112.0" maxHeight="30.0" maxWidth="100.0" mnemonicParsing="false" onAction="#ricercaServizio" prefHeight="30.0" prefWidth="100.0" text="Avvia" />
+                              <ImageView fx:id="esitoServizio" cache="true" fitHeight="100.0" fitWidth="100.0" layoutX="299.0" layoutY="175.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                 <viewport>
+                                    <Rectangle2D height="100.0" width="100.0" />
+                                 </viewport>
+                              </ImageView>
+                               <Text fx:id="esitoRisultato" layoutX="183.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avvia la scansione per visualizzare il risultato" textAlignment="CENTER" wrappingWidth="333.00001525878906">
+                                   <font>
+                                       <Font name="System Bold" size="14.0" />
+                                   </font>
+                               </Text>
+                               <Text fx:id="hostRisultato" layoutX="214.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="272.0">
+                                   <font>
+                                       <Font size="14.0" />
+                                   </font>
+                               </Text>
+                               <Text fx:id="ipRisultato" layoutX="213.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="272.800048828125">
+                                   <font>
+                                       <Font size="14.0" />
+                                   </font>
+                               </Text>
+                               <Text fx:id="portaRisultato" layoutX="213.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="274.4000244140625">
+                                   <font>
+                                       <Font size="14.0" />
+                                   </font>
+                               </Text>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
